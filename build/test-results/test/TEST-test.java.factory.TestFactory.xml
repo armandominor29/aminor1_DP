@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.factory.TestFactory" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-17T04:24:39" hostname="armandos-air.lan" time="0.022">
+<testsuite name="test.java.factory.TestFactory" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-17T04:34:08" hostname="armandos-air.lan" time="0.049">
   <properties/>
-  <testcase name="testBuildVehicle" classname="test.java.factory.TestFactory" time="0.022"/>
+  <testcase name="testBuildVehicle" classname="test.java.factory.TestFactory" time="0.049"/>
   <system-out><![CDATA[Building Sports vehicle
 Building Hybrid vehicle
 Building Truck vehicle

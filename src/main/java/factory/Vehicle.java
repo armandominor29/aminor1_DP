@@ -17,7 +17,7 @@ public abstract class Vehicle {
     private boolean gasExtender;
     private boolean towingPackage;
         
-    //*method builds specific vehicle*//
+    /*method builds specific vehicle*/
     public Vehicle(VehicleType model) {
         this.model = model;
         if (model == VehicleType.SPORT) {
@@ -31,7 +31,7 @@ public abstract class Vehicle {
         }
     }
 
-    //*Method builds sports with specific attributes *//
+    //*Method builds sports with specific attributes*//
     private void buildSportsCar() {
         this.vin = count++;
         this.mpg = 25;

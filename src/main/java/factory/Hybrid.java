@@ -1,6 +1,6 @@
 package main.java.factory;
 
-//*Class Hybrid creates a new hybrid vehicle*//
+/*Class Hybrid creates a new hybrid vehicle*/
 public class Hybrid extends Vehicle {
     
     Hybrid() {

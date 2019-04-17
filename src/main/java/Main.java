@@ -8,7 +8,7 @@ import main.java.factory.VehicleType;
 
 //*Main class to show case all Design Patterns*//
 public class Main {
-    //*Main class to show case all Design Patterns*//
+    /*Main class to show case all Design Patterns*/
     public static void main(String[] args) {
         
         //*Start demo of Factory method *//

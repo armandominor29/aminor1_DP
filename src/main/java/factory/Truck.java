@@ -1,6 +1,6 @@
 package main.java.factory;
 
-//*Class Truck creates a new truck vehicle*//
+/*Class Truck creates a new truck vehicle*/
 public class Truck extends Vehicle {
     
     Truck() {

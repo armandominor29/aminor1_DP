@@ -1,6 +1,6 @@
 package main.java.factory;
 
-//*Class Sport creates a new sports vehicle*//
+/*Class Sport creates a new sports vehicle*/
 public class Sport extends Vehicle {
     
     Sport() {

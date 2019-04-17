@@ -9,7 +9,7 @@ package main.java.factory;
 
 public class FordManufacturer extends Sport {
     
-    //*Ford Sport Vehicle is built all else fails*//
+    /*Ford Sport Vehicle is built all else fails*/
     public static Vehicle buildFordVehicle(VehicleType model) {
         Vehicle vehicle = null;
         switch (model) {
