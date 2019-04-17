@@ -150,7 +150,7 @@ public abstract class Vehicle {
         return towingPackage;
     }
  
-    public void settowingPackage(boolean towingPackage) {
+    public void setTowingPackage(boolean towingPackage) {
         this.towingPackage = towingPackage;
     }
 }
