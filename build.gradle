@@ -24,13 +24,12 @@ dependencies {
 
 }
 
-//test {
-//	filter {
-//	 //specific test class
-//	 includeTestsMatching "GivenWhiteBox"
-//	 includeTestsMatching "CourseTest"
-//	}
-// }
+test {
+	filter {
+	 //specific test class
+	 includeTestsMatching "TestFactory"
+	}
+ }
 
 ///////////////////////////////////////////////////////////////////////////
 // Configure Checkstyle
