@@ -6,6 +6,13 @@ import main.java.factory.NissanManufacturer;
 import main.java.factory.Vehicle;
 import main.java.factory.VehicleType;
 
+import main.java.decorator.AcquireDecorator;
+import main.java.decorator.Acquisition;
+import main.java.decorator.FordAcq;
+import main.java.decorator.ChevroletAcq;
+import main.java.decorator.NissanAcq;
+import main.java.decorator.Acquire;;
+
 //*Main class to show case all Design Patterns*//
 public class Main {
     /*Main class to show case all Design Patterns*/
@@ -33,6 +40,35 @@ public class Main {
         System.out.println("Turbo: " + truck.getTurbo());
         System.out.println("Towing Package: " + truck.getTowingPackage());
         System.out.println("Gas Extender: " + truck.getGasExtender());
+        //*End demo of Factory method *//
+        
+        
+        //*Start demo of Decorator method *//
+        
+        Acquire chevy = new ChevroletAcq();
+        //int chevyBal = new ChevroletAcq().getBalance();
+        
+        Acquire acqFord = new Acquisition(new FordAcq());
+        int fordBal = new FordAcq().getBalance();
+        
+        Acquire acqNissan = new Acquisition(new NissanAcq());
+        int nissanBal = new NissanAcq().getBalance();
+
+        System.out.println("\nAcquiring Chevrolet ");
+        chevy.acquire();
+        //chevyBal = new ChevroletAcq().updateBalance();
+        //System.out.println("NewBalance $" + chevyBal);
+        
+        System.out.println("\nAcquiring Ford " + "Balance $" + fordBal);
+        acqFord.acquire();
+        fordBal = new FordAcq().updateBalance();
+        System.out.println("NewBalance $" + fordBal);
+
+        System.out.println("\nAcquiring Nissanv" + "Balance $" + nissanBal);
+        acqNissan.acquire();
+        nissanBal = new NissanAcq().updateBalance();
+        System.out.println("NewBalance $" + nissanBal);
+        
         //*End demo of Factory method *//
     }
 
