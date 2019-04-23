@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.decorator.TestDecorator" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-23T04:37:21" hostname="armandos-air.lan" time="0.031">
+  <properties/>
+  <testcase name="testAcquireDecorator" classname="test.java.decorator.TestDecorator" time="0.031"/>
+  <system-out><![CDATA[Balance Available $3000000
+Acquired Debt $95000
+Subtracting Cost $0
+New Balance $2905000
+You can now manufacture Chevrolet Hybrid Vehicles
+Balance Available $3000000
+Acquired Debt $95000
+Subtracting Cost $8000000
+New Balance $-5095000
+You can now manufacture Ford Sport Vehicles
+Balance Available $3000000
+Acquired Debt $95000
+Subtracting Cost $8000000
+New Balance $-5095000
+You can now manufacture Nissan Truck Vehicles
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

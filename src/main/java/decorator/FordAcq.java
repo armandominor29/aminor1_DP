@@ -7,27 +7,29 @@ package main.java.decorator;
 
 public class FordAcq implements Acquire {
     
-    int cost= 8000000;
-    int balance=3000000;
+    int cost = 8000000;
+    int balance = 3000000;
     int debt = 95000;
     
     @Override
     //*acquire override acquires manufacturer and inherits factory*//
     public void acquire() {
-        
-        if (getBalance()>getCost()) {
-            System.out.println("Ford Acquired");
-            inheritFordFactory();
-        }
-        else {
-            System.out.println("You dont have enough money to buy Ford!");
-        }
+        buyOut();
+        inheritFordFactory();
     }
     
     //*inherits ford factory*//
     public void inheritFordFactory() {
-       System.out.println("You can now manufacture Ford Sport Vehicles");
+        System.out.println("You can now manufacture Ford Sport Vehicles");
     }
+    
+    private void buyOut() {
+        System.out.println("Balance Available $" + this.getBalance());
+        System.out.println("Acquired Debt $" + this.getDebt());
+        System.out.println("Subtracting Cost $" + this.getCost());
+        System.out.println("New Balance $" + updateBalance());
+    }
+    
     public int getBalance() {
         return balance;
     }
@@ -44,15 +46,16 @@ public class FordAcq implements Acquire {
         this.cost = cost;
     }
     
+    public int getDebt() {
+        return debt;
+    }
+    
+    public void setDebt(int debt) {
+        this.debt = debt;
+    }
+    
     public int updateBalance() {
-        
-        
-        if (getBalance()>getCost()) {
-            int newBalance = getBalance()-getCost();
-            return newBalance;
-        }
-        else {
-            return getBalance();
-        }
+        int newBalance = getBalance() - getCost() - getDebt();
+        return newBalance;
     }
 }

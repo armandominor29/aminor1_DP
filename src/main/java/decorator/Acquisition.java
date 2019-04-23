@@ -18,4 +18,4 @@ public class Acquisition extends AcquireDecorator {
     public void acquire() {
         decoratedAcquire.acquire();
     }
- }
+}

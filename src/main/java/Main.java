@@ -1,21 +1,20 @@
 package main.java;
 
+import main.java.decorator.Acquire;
+import main.java.decorator.Acquisition;
+import main.java.decorator.ChevroletAcq;
+import main.java.decorator.FordAcq;
+import main.java.decorator.NissanAcq;
+
 import main.java.factory.ChevroletManufacturer;
 import main.java.factory.FordManufacturer;
 import main.java.factory.NissanManufacturer;
 import main.java.factory.Vehicle;
 import main.java.factory.VehicleType;
 
-import main.java.decorator.AcquireDecorator;
-import main.java.decorator.Acquisition;
-import main.java.decorator.FordAcq;
-import main.java.decorator.ChevroletAcq;
-import main.java.decorator.NissanAcq;
-import main.java.decorator.Acquire;;
-
 //*Main class to show case all Design Patterns*//
 public class Main {
-    /*Main class to show case all Design Patterns*/
+    //*Main class to show case all Design Patterns*//
     public static void main(String[] args) {
         
         //*Start demo of Factory method *//
@@ -42,32 +41,22 @@ public class Main {
         System.out.println("Gas Extender: " + truck.getGasExtender());
         //*End demo of Factory method *//
         
-        
         //*Start demo of Decorator method *//
         
-        Acquire chevy = new ChevroletAcq();
-        //int chevyBal = new ChevroletAcq().getBalance();
+        final Acquire acqChevy = new ChevroletAcq();
         
-        Acquire acqFord = new Acquisition(new FordAcq());
-        int fordBal = new FordAcq().getBalance();
+        final Acquire acqFord = new Acquisition(new FordAcq());
         
-        Acquire acqNissan = new Acquisition(new NissanAcq());
-        int nissanBal = new NissanAcq().getBalance();
-
-        System.out.println("\nAcquiring Chevrolet ");
-        chevy.acquire();
-        //chevyBal = new ChevroletAcq().updateBalance();
-        //System.out.println("NewBalance $" + chevyBal);
+        final Acquire acqNissan = new Acquisition(new NissanAcq());
         
-        System.out.println("\nAcquiring Ford " + "Balance $" + fordBal);
+        System.out.println("\nAcquiring Chevrolet");
+        acqChevy.acquire();
+        
+        System.out.println("\n\nAcquiring Ford");
         acqFord.acquire();
-        fordBal = new FordAcq().updateBalance();
-        System.out.println("NewBalance $" + fordBal);
 
-        System.out.println("\nAcquiring Nissanv" + "Balance $" + nissanBal);
+        System.out.println("\n\nAcquiring Nissan");
         acqNissan.acquire();
-        nissanBal = new NissanAcq().updateBalance();
-        System.out.println("NewBalance $" + nissanBal);
         
         //*End demo of Factory method *//
     }

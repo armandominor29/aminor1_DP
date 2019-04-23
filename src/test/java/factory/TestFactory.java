@@ -9,7 +9,7 @@ import main.java.factory.FordManufacturer;
 import main.java.factory.NissanManufacturer;
 
 import main.java.factory.Vehicle;
-
+import main.java.factory.VehicleFactory;
 import main.java.factory.VehicleType;
 
 import org.junit.Before;
@@ -22,6 +22,9 @@ public class TestFactory {
     Vehicle sportsVehicle;
     Vehicle hybridVehicle;
     Vehicle truckVehicle;
+    Vehicle sportsGeneric;
+    Vehicle hybridGeneric;
+    Vehicle truckGeneric;
 
     @Before
     public void setUp() throws Exception {
@@ -34,6 +37,10 @@ public class TestFactory {
         sportsVehicle = FordManufacturer.buildFordVehicle(VehicleType.SPORT);
         hybridVehicle = ChevroletManufacturer.buildChevroletVehicle(VehicleType.HYBRID);
         truckVehicle = NissanManufacturer.buildNissanVehicle(VehicleType.TRUCK);
+        
+        sportsGeneric = VehicleFactory.buildVehicle(VehicleType.SPORT);
+        hybridGeneric = VehicleFactory.buildVehicle(VehicleType.HYBRID);
+        truckGeneric = VehicleFactory.buildVehicle(VehicleType.TRUCK);
         
         /*Set up sports vehicle*/
         sportsVehicle.setColor("blue");
@@ -67,6 +74,39 @@ public class TestFactory {
         truckVehicle.setMpg(20);
         truckVehicle.setTowingPackage(true);
         truckVehicle.setVin(3456);
+        
+        /*Set up generic sports vehicle*/
+        sportsGeneric.setColor("yellow");
+        sportsGeneric.setCost(35000);
+        sportsGeneric.setDoorCount(2);
+        sportsGeneric.setGasExtender(false);
+        sportsGeneric.setTurbo(true);
+        sportsGeneric.setModel(VehicleType.SPORT);
+        sportsGeneric.setMpg(30);
+        sportsGeneric.setTowingPackage(false);
+        sportsGeneric.setVin(1111);
+        
+        /*Set up generic hybrid vehicle*/
+        hybridGeneric.setColor("maroon");
+        hybridGeneric.setCost(35000);
+        hybridGeneric.setDoorCount(4);
+        hybridGeneric.setGasExtender(true);
+        hybridGeneric.setTurbo(false);
+        hybridGeneric.setModel(VehicleType.HYBRID);
+        hybridGeneric.setMpg(60);
+        hybridGeneric.setTowingPackage(false);
+        hybridGeneric.setVin(2222);
+        
+        /*Set up generic truck vehicle*/
+        truckGeneric.setColor("green");
+        truckGeneric.setCost(40000);
+        truckGeneric.setDoorCount(4);
+        truckGeneric.setGasExtender(false);
+        truckGeneric.setTurbo(false);
+        truckGeneric.setModel(VehicleType.TRUCK);
+        truckGeneric.setMpg(10);
+        truckGeneric.setTowingPackage(true);
+        truckGeneric.setVin(3333);
         
         /*test for sports vehicle for expected results*/
         String sportColor = sportsVehicle.getColor();
@@ -153,5 +193,89 @@ public class TestFactory {
         
         int truckVin = truckVehicle.getVin();
         assertTrue(truckVin == 3456);
+        
+        /*test for Generic sports vehicle for expected results*/
+        String sportGenericColor = sportsGeneric.getColor();
+        assertTrue(sportGenericColor == "yellow");
+        
+        int sportsGenericCost = sportsGeneric.getCost();
+        assertTrue(sportsGenericCost == 35000);
+        
+        int sportsGenericDoorCount = sportsGeneric.getDoorCount();
+        assertTrue(sportsGenericDoorCount == 2);
+        
+        boolean sportsGenericGasExtender = sportsGeneric.getGasExtender();
+        assertTrue(sportsGenericGasExtender == false);
+        
+        boolean sportsGenericTurbo = sportsGeneric.getTurbo();
+        assertTrue(sportsGenericTurbo == true);
+        
+        VehicleType sportsGenericModel = sportsGeneric.getModel();
+        assertTrue(sportsGenericModel == VehicleType.SPORT);
+        
+        int sportsGenericMpg = sportsGeneric.getMpg();
+        assertTrue(sportsGenericMpg == 30);
+        
+        boolean sportsGenericTowingPackage = sportsGeneric.getTowingPackage();
+        assertTrue(sportsGenericTowingPackage == false);
+        
+        int sportsGenericVin = sportsGeneric.getVin();
+        assertTrue(sportsGenericVin == 1111);
+        
+        /*test for Generic hybrid vehicle for expected results*/
+        String hybridGenericColor = hybridGeneric.getColor();
+        assertTrue(hybridGenericColor == "maroon");
+        
+        int hybridGenericCost = hybridGeneric.getCost();
+        assertTrue(hybridGenericCost == 35000);
+        
+        int hybridGenericDoorCount = hybridGeneric.getDoorCount();
+        assertTrue(hybridGenericDoorCount == 4);
+        
+        boolean hybridGenericGasExtender = hybridGeneric.getGasExtender();
+        assertTrue(hybridGenericGasExtender == true);
+        
+        boolean hybridGenericTurbo = hybridGeneric.getTurbo();
+        assertTrue(hybridGenericTurbo == false);
+        
+        VehicleType hybridGenericModel = hybridGeneric.getModel();
+        assertTrue(hybridGenericModel == VehicleType.HYBRID);
+        
+        int hybridGenericMpg = hybridGeneric.getMpg();
+        assertTrue(hybridGenericMpg == 60);
+        
+        boolean hybridGenericTowingPackage = hybridGeneric.getTowingPackage();
+        assertTrue(hybridGenericTowingPackage == false);
+        
+        int hybridGenericVin = hybridGeneric.getVin();
+        assertTrue(hybridGenericVin == 2222);
+        
+        /*test for Generic truck vehicle for expected results*/
+        String truckGenericColor = truckGeneric.getColor();
+        assertTrue(truckGenericColor == "green");
+        
+        int truckGenericCost = truckGeneric.getCost();
+        assertTrue(truckGenericCost == 40000);
+        
+        int truckGenericDoorCount = truckGeneric.getDoorCount();
+        assertTrue(truckGenericDoorCount == 4);
+        
+        boolean truckGenericGasExtender = truckGeneric.getGasExtender();
+        assertTrue(truckGenericGasExtender == false);
+        
+        boolean truckGenericTurbo = truckGeneric.getTurbo();
+        assertTrue(truckGenericTurbo == false);
+        
+        VehicleType truckGenericModel = truckGeneric.getModel();
+        assertTrue(truckGenericModel == VehicleType.TRUCK);
+        
+        int truckGenericMpg = truckGeneric.getMpg();
+        assertTrue(truckGenericMpg == 10);
+        
+        boolean truckGenericTowingPackage = truckGeneric.getTowingPackage();
+        assertTrue(truckGenericTowingPackage == true);
+        
+        int truckGenericVin = truckGeneric.getVin();
+        assertTrue(truckGenericVin == 3333);
     }
 }

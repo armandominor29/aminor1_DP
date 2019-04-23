@@ -9,7 +9,7 @@ package main.java.factory;
 
 public class NissanManufacturer extends Truck {
     
-    /*Nissan Truck Vehicle is built all else fails*/
+    //*Nissan Truck Vehicle is built all else fails*//
     public static Vehicle buildNissanVehicle(VehicleType model) {
         Vehicle vehicle = null;
         switch (model) {

@@ -11,7 +11,7 @@ public abstract class AcquireDecorator implements Acquire {
 
     //*Decorator*//
     public AcquireDecorator(Acquire decoratedAcquire) {
-       this.decoratedAcquire = decoratedAcquire;
+        this.decoratedAcquire = decoratedAcquire;
     }
 
     //*To be used by acquisition*//

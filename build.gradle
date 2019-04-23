@@ -19,7 +19,9 @@ repositories {
 dependencies {
 
     compile "junit:junit:4.12" 
+    compile fileTree(dir: 'src', include: 'main.java')
     compile fileTree(dir: 'src', include: 'factory.java')
+    compile fileTree(dir: 'src', include: 'decorator.java')
     compile files('cls/')
 
 }
@@ -28,6 +30,7 @@ test {
 	filter {
 	 //specific test class
 	 includeTestsMatching "TestFactory"
+	 includeTestsMatching "TestDecorator"
 	}
  }
 

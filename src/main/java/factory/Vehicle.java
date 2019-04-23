@@ -17,7 +17,7 @@ public abstract class Vehicle {
     private boolean gasExtender;
     private boolean towingPackage;
         
-    /*method builds specific vehicle*/
+    //*method builds specific vehicle*//
     public Vehicle(VehicleType model) {
         this.model = model;
         if (model == VehicleType.SPORT) {

@@ -9,22 +9,7 @@ package main.java.factory;
 
 public class FordManufacturer extends Sport {
     
-    private FactoryType man = null;
-    
-    public FordManufacturer(FactoryType man) {
-        this.man = man;
-        if (man == FactoryType.CHEVROLET) {
-            //buildSportsCar();
-        } else if (man == FactoryType.FORD) {
-            //buildHybridCar();
-        } else if (man == FactoryType.NISSAN) {
-           // buildTruckCar();
-        } else {
-            throw new IllegalStateException("Object not initialized");
-        }
-    }
-    
-    /*Ford Sport Vehicle is built all else fails*/
+    //*Ford Sport Vehicle is built all else fails*//
     public static Vehicle buildFordVehicle(VehicleType model) {
         Vehicle vehicle = null;
         switch (model) {

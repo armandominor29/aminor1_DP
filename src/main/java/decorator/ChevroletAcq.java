@@ -8,33 +8,27 @@ package main.java.decorator;
 public class ChevroletAcq implements Acquire {
     
     int cost;
-    int balance;
-    int debt;
-    int tick;
+    int balance = 3000000;
+    int debt = 95000;
     
     @Override
     //*acquire override acquires manufacturer and inherits factory*//
     public void acquire() {
-        tick++;
-        setBalance(9000000);
-        setCost(6000000);
-        setDebt(2000000);
-        
-        if (getBalance()>getCost()) {
-           System.out.println("Balance Available $" + getBalance());
-           System.out.println("Acquired Debt $" + getDebt());
-           System.out.println("Subtracting Cost $" + getCost());
-           System.out.println("New Balance $" + updateBalance());
-           inheritChevroletFactory();
-           }
-        else {
-            System.out.println("You dont have enough money to buy Chevrolet!");
-            }
+        buyOut();
+        inheritChevroletFactory();
     }
     
-    //*inherits Chevrolet factory*//
+    //*inherits ford factory*//
     public void inheritChevroletFactory() {
-       System.out.println("You can now manufacture Chevrolet Hybrid Vehicles");
+        System.out.println("You can now manufacture Chevrolet Hybrid Vehicles");
+    }
+    
+    //*Perform buy out*//
+    private void buyOut() {
+        System.out.println("Balance Available $" + this.getBalance());
+        System.out.println("Acquired Debt $" + this.getDebt());
+        System.out.println("Subtracting Cost $" + this.getCost());
+        System.out.println("New Balance $" + updateBalance());
     }
     
     public int getBalance() {
@@ -61,8 +55,14 @@ public class ChevroletAcq implements Acquire {
         this.debt = debt;
     }
     
+    //*update balance after acquisition*//
     public int updateBalance() {
-            int newBalance = getBalance()-getCost()-getDebt();
-            return newBalance;
+        if (getBalance() > getCost()) {
+            int newBalance = getBalance() - getCost() - getDebt();
+            return newBalance;  
+        } else {
+            return getBalance();
+        }
+            
     }
 }

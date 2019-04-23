@@ -6,7 +6,7 @@ package main.java.factory;
 */
 
 public class VehicleFactory {
-    /*Vehicle is built based on Vehicle Type input*/
+    //*Vehicle is built based on Vehicle Type input*//
     public static Vehicle buildVehicle(VehicleType model) {
         Vehicle vehicle = null;
         switch (model) {

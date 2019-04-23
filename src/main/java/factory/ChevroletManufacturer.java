@@ -9,7 +9,7 @@ package main.java.factory;
 
 public class ChevroletManufacturer extends Hybrid {
     
-    /*Chevrolet Hybrid Vehicle is built all else fails*/
+    //*Chevrolet Hybrid Vehicle is built all else fails*//
     public static Vehicle buildChevroletVehicle(VehicleType model) {
         Vehicle vehicle = null;
         switch (model) {
